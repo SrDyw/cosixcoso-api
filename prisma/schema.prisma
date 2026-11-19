@@ -96,3 +96,30 @@ model Media {
   ubication   String? @default("Cuba") @db.VarChar(100)
   public_id   String? 
 }
+
+// Cuentas de la app nueva (usuario + contraseña). Son una capa aparte:
+// los endpoints de datos siguen funcionando sin autenticación.
+model Account {
+  id            Int       @id @default(autoincrement())
+  username      String    @unique @db.VarChar(24)
+  password_hash String    @db.VarChar(255)
+  quien         String    @db.VarChar(4) // "cosi" | "coso"
+  couple_id     String    @db.VarChar(200)
+  created_at    DateTime  @default(now())
+  sessions      Session[]
+
+  @@unique([couple_id, quien])
+  @@map("cosxs_accounts")
+}
+
+model Session {
+  id         Int      @id @default(autoincrement())
+  token_hash String   @unique @db.VarChar(64) // sha256 hex del token
+  account_id Int
+  account    Account  @relation(fields: [account_id], references: [id], onDelete: Cascade)
+  created_at DateTime @default(now())
+  expires_at DateTime
+
+  @@index([account_id])
+  @@map("cosxs_sessions")
+}

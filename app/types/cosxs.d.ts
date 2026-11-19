@@ -110,3 +110,24 @@ export interface CloudinaryUploadResponse {
   original_filename: string;
   api_key: string;
 }
+
+export type QuienType = "cosi" | "coso";
+
+// Cuenta tal y como se guarda (con el hash de la contraseña)
+export type AccountType = {
+    id: number;
+    username: string;
+    password_hash: string;
+    quien: string;
+    couple_id: string;
+    created_at: Date;
+}
+
+// Lo que la API devuelve como `user`
+export type UserType = {
+    id: number;
+    username: string;
+    quien: QuienType;
+    couple_id: string;
+    created_at: string;
+}

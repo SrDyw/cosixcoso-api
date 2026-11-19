@@ -9,6 +9,7 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // En Vercel la base llega como CXC_STORAGE_DATABASE_URL (almacenamiento enlazado).
+    url: process.env["DATABASE_URL"] ?? process.env["CXC_STORAGE_DATABASE_URL"],
   },
 });

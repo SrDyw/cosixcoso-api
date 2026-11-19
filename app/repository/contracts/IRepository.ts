@@ -4,5 +4,4 @@ export default interface IRepository<T> {
     find(id: number): Promise<T | null>;
     create(article: T): Promise<T | undefined>;
     remove(id:number): Promise<boolean>;
-    count() : Promise<number>;
 }

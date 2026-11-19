@@ -74,3 +74,13 @@ export type QuestionAnswer = Prisma.QuestionAnswerModel
  * 
  */
 export type Media = Prisma.MediaModel
+/**
+ * Model Account
+ * 
+ */
+export type Account = Prisma.AccountModel
+/**
+ * Model Session
+ * 
+ */
+export type Session = Prisma.SessionModel

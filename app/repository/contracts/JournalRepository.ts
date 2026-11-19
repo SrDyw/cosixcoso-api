@@ -86,4 +86,5 @@ export default class JournalRepository implements IRepository<JournalType> {
   }
 }
 
-export const Journals: IRepository<JournalType> = new JournalRepository();
+// Con su tipo propio: además de IRepository tiene count() (general/datacount).
+export const Journals = new JournalRepository();
