@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Journal {
+  id          Int     @id
+  description String
+  emoji       Int     @default(1)
+  date        String  @db.VarChar(30)
+  user_id     String? @map("user_id") @db.VarChar(200)
+  couple_id   String? @default("public") @db.VarChar(200)
+}
+
+model CosxEvent {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(200)
+  description String?
+  start_date  String   @map("start_date") @db.VarChar(30)
+  end_date    String   @map("end_date") @db.VarChar(30)
+  color       String   @default("#3b82f6") @db.VarChar(10)
+  user_id     String?  @map("user_id") @db.VarChar(200)
+  created_at  DateTime @default(now()) @map("created_at")
+  couple_id   String?  @default("public") @db.VarChar(200)
+
+  @@map("cosx_events")
+}
+
+model CosxMessage {
+  id         Int     @id @default(autoincrement())
+  sender     String  @db.VarChar(100)
+  message    String  @db.Text
+  created_at String  @db.VarChar(50)
+  couple_id  String? @default("public") @db.VarChar(200)
+
+  @@map("cosxs_messages")
+}
+
+// schema.prisma - añade este modelo
+model Character {
+  id        Int     @id @default(autoincrement())
+  name      String  @db.VarChar(100)
+  touches   Int     @default(0)
+  emoji     Int     @default(1)
+  gender    String  @db.VarChar(1)
+  couple_id String? @default("public") @db.VarChar(200)
+
+  @@map("characters")
+}
+
+model TodoList {
+  id          Int     @id @default(autoincrement())
+  description String
+  completed   Boolean @default(false)
+  color       String  @default("#fff") @db.VarChar(10) // 1: Alta, 2: Media, 3: Baja
+  due_date    String? @map("due_date") @db.VarChar(30)
+  user_id     String? @map("user_id") @db.VarChar(200)
+  couple_id   String? @default("public") @db.VarChar(200)
+  created_at  String  @db.VarChar(30)
+  updated_at  String  @db.VarChar(30)
+
+  @@map("cosxs_todo ")
+}
+
+model QuestionAnswer {
+  id          Int     @id @default(autoincrement())
+  message     String
+  question_id Int
+  user_id     String? @map("user_id") @db.VarChar(200)
+  couple_id   String? @default("public") @db.VarChar(200)
+  created_at  String  @db.VarChar(30)
+
+  @@map("cosxs_qanswer ")
+}
+
+model Media {
+  id          Int     @id @default(autoincrement())
+  key         String  @unique
+  description String?
+  url         String
+  url2        String?
+  created_at  String  @db.VarChar(30)
+  couple_id   String? @default("public") @db.VarChar(200)
+  date        DateTime?
+  date_string String?
+  ubication   String? @default("Cuba") @db.VarChar(100)
+  public_id   String? 
+}

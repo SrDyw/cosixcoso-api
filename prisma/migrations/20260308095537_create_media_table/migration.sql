@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Media" ALTER COLUMN "key" SET DATA TYPE TEXT;
