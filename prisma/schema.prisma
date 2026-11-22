@@ -139,3 +139,14 @@ model SwipeChoice {
   @@index([couple_id])
   @@map("cosxs_swipes")
 }
+
+model CatalogQuestion {
+  id         Int      @id @default(autoincrement())
+  categoria  String   @db.VarChar(40)
+  texto      String
+  activa     Boolean  @default(true)
+  created_at DateTime @default(now())
+
+  @@index([categoria])
+  @@map("cosxs_question_catalog")
+}

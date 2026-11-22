@@ -60,7 +60,8 @@ export const ModelName = {
   Media: 'Media',
   Account: 'Account',
   Session: 'Session',
-  SwipeChoice: 'SwipeChoice'
+  SwipeChoice: 'SwipeChoice',
+  CatalogQuestion: 'CatalogQuestion'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -208,6 +209,17 @@ export const SwipeChoiceScalarFieldEnum = {
 } as const
 
 export type SwipeChoiceScalarFieldEnum = (typeof SwipeChoiceScalarFieldEnum)[keyof typeof SwipeChoiceScalarFieldEnum]
+
+
+export const CatalogQuestionScalarFieldEnum = {
+  id: 'id',
+  categoria: 'categoria',
+  texto: 'texto',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogQuestionScalarFieldEnum = (typeof CatalogQuestionScalarFieldEnum)[keyof typeof CatalogQuestionScalarFieldEnum]
 
 
 export const SortOrder = {

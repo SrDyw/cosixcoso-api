@@ -393,7 +393,8 @@ export const ModelName = {
   Media: 'Media',
   Account: 'Account',
   Session: 'Session',
-  SwipeChoice: 'SwipeChoice'
+  SwipeChoice: 'SwipeChoice',
+  CatalogQuestion: 'CatalogQuestion'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -409,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session" | "swipeChoice"
+    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session" | "swipeChoice" | "catalogQuestion"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1153,6 +1154,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    CatalogQuestion: {
+      payload: Prisma.$CatalogQuestionPayload<ExtArgs>
+      fields: Prisma.CatalogQuestionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CatalogQuestionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CatalogQuestionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        findFirst: {
+          args: Prisma.CatalogQuestionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CatalogQuestionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        findMany: {
+          args: Prisma.CatalogQuestionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>[]
+        }
+        create: {
+          args: Prisma.CatalogQuestionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        createMany: {
+          args: Prisma.CatalogQuestionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CatalogQuestionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>[]
+        }
+        delete: {
+          args: Prisma.CatalogQuestionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        update: {
+          args: Prisma.CatalogQuestionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        deleteMany: {
+          args: Prisma.CatalogQuestionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CatalogQuestionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CatalogQuestionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>[]
+        }
+        upsert: {
+          args: Prisma.CatalogQuestionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogQuestionPayload>
+        }
+        aggregate: {
+          args: Prisma.CatalogQuestionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCatalogQuestion>
+        }
+        groupBy: {
+          args: Prisma.CatalogQuestionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogQuestionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CatalogQuestionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogQuestionCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1321,6 +1396,17 @@ export const SwipeChoiceScalarFieldEnum = {
 } as const
 
 export type SwipeChoiceScalarFieldEnum = (typeof SwipeChoiceScalarFieldEnum)[keyof typeof SwipeChoiceScalarFieldEnum]
+
+
+export const CatalogQuestionScalarFieldEnum = {
+  id: 'id',
+  categoria: 'categoria',
+  texto: 'texto',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogQuestionScalarFieldEnum = (typeof CatalogQuestionScalarFieldEnum)[keyof typeof CatalogQuestionScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1520,6 +1606,7 @@ export type GlobalOmitConfig = {
   account?: Prisma.AccountOmit
   session?: Prisma.SessionOmit
   swipeChoice?: Prisma.SwipeChoiceOmit
+  catalogQuestion?: Prisma.CatalogQuestionOmit
 }
 
 /* Types for Logging */

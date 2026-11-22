@@ -67,3 +67,8 @@ export type Session = Prisma.SessionModel
  * 
  */
 export type SwipeChoice = Prisma.SwipeChoiceModel
+/**
+ * Model CatalogQuestion
+ * 
+ */
+export type CatalogQuestion = Prisma.CatalogQuestionModel
