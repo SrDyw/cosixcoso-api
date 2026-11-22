@@ -1,4 +1,4 @@
-﻿CREATE TABLE "cosxs_swipes" (
+CREATE TABLE "cosxs_swipes" (
     "id" SERIAL NOT NULL,
     "card_id" INTEGER NOT NULL,
     "user_id" VARCHAR(200) NOT NULL,
