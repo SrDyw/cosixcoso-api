@@ -94,3 +94,13 @@ export type SwipeChoice = Prisma.SwipeChoiceModel
  * 
  */
 export type CatalogQuestion = Prisma.CatalogQuestionModel
+/**
+ * Model CatalogGame
+ * 
+ */
+export type CatalogGame = Prisma.CatalogGameModel
+/**
+ * Model CatalogGameCard
+ * 
+ */
+export type CatalogGameCard = Prisma.CatalogGameCardModel

@@ -150,3 +150,30 @@ model CatalogQuestion {
   @@index([categoria])
   @@map("cosxs_question_catalog")
 }
+
+model CatalogGame {
+  id          String   @id @db.VarChar(60)
+  nombre      String   @db.VarChar(120)
+  descripcion String
+  emoji       String   @db.VarChar(20)
+  color       String   @db.VarChar(20)
+  orden       Int      @default(0)
+  activa      Boolean  @default(true)
+  created_at  DateTime @default(now())
+
+  @@map("cosxs_game_catalog")
+}
+
+model CatalogGameCard {
+  id         Int      @id @default(autoincrement())
+  group_id   String   @db.VarChar(60)
+  texto      String
+  categoria  String   @db.VarChar(60)
+  emoji      String   @db.VarChar(20)
+  color      String   @db.VarChar(20)
+  activa     Boolean  @default(true)
+  created_at DateTime @default(now())
+
+  @@index([group_id])
+  @@map("cosxs_game_card_catalog")
+}

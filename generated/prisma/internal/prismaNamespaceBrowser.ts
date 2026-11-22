@@ -61,7 +61,9 @@ export const ModelName = {
   Account: 'Account',
   Session: 'Session',
   SwipeChoice: 'SwipeChoice',
-  CatalogQuestion: 'CatalogQuestion'
+  CatalogQuestion: 'CatalogQuestion',
+  CatalogGame: 'CatalogGame',
+  CatalogGameCard: 'CatalogGameCard'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -220,6 +222,34 @@ export const CatalogQuestionScalarFieldEnum = {
 } as const
 
 export type CatalogQuestionScalarFieldEnum = (typeof CatalogQuestionScalarFieldEnum)[keyof typeof CatalogQuestionScalarFieldEnum]
+
+
+export const CatalogGameScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  descripcion: 'descripcion',
+  emoji: 'emoji',
+  color: 'color',
+  orden: 'orden',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogGameScalarFieldEnum = (typeof CatalogGameScalarFieldEnum)[keyof typeof CatalogGameScalarFieldEnum]
+
+
+export const CatalogGameCardScalarFieldEnum = {
+  id: 'id',
+  group_id: 'group_id',
+  texto: 'texto',
+  categoria: 'categoria',
+  emoji: 'emoji',
+  color: 'color',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogGameCardScalarFieldEnum = (typeof CatalogGameCardScalarFieldEnum)[keyof typeof CatalogGameCardScalarFieldEnum]
 
 
 export const SortOrder = {

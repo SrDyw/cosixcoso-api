@@ -394,7 +394,9 @@ export const ModelName = {
   Account: 'Account',
   Session: 'Session',
   SwipeChoice: 'SwipeChoice',
-  CatalogQuestion: 'CatalogQuestion'
+  CatalogQuestion: 'CatalogQuestion',
+  CatalogGame: 'CatalogGame',
+  CatalogGameCard: 'CatalogGameCard'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -410,7 +412,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session" | "swipeChoice" | "catalogQuestion"
+    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session" | "swipeChoice" | "catalogQuestion" | "catalogGame" | "catalogGameCard"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1228,6 +1230,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    CatalogGame: {
+      payload: Prisma.$CatalogGamePayload<ExtArgs>
+      fields: Prisma.CatalogGameFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CatalogGameFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CatalogGameFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        findFirst: {
+          args: Prisma.CatalogGameFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CatalogGameFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        findMany: {
+          args: Prisma.CatalogGameFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>[]
+        }
+        create: {
+          args: Prisma.CatalogGameCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        createMany: {
+          args: Prisma.CatalogGameCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CatalogGameCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>[]
+        }
+        delete: {
+          args: Prisma.CatalogGameDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        update: {
+          args: Prisma.CatalogGameUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        deleteMany: {
+          args: Prisma.CatalogGameDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CatalogGameUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CatalogGameUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>[]
+        }
+        upsert: {
+          args: Prisma.CatalogGameUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGamePayload>
+        }
+        aggregate: {
+          args: Prisma.CatalogGameAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCatalogGame>
+        }
+        groupBy: {
+          args: Prisma.CatalogGameGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogGameGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CatalogGameCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogGameCountAggregateOutputType> | number
+        }
+      }
+    }
+    CatalogGameCard: {
+      payload: Prisma.$CatalogGameCardPayload<ExtArgs>
+      fields: Prisma.CatalogGameCardFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CatalogGameCardFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CatalogGameCardFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        findFirst: {
+          args: Prisma.CatalogGameCardFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CatalogGameCardFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        findMany: {
+          args: Prisma.CatalogGameCardFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>[]
+        }
+        create: {
+          args: Prisma.CatalogGameCardCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        createMany: {
+          args: Prisma.CatalogGameCardCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CatalogGameCardCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>[]
+        }
+        delete: {
+          args: Prisma.CatalogGameCardDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        update: {
+          args: Prisma.CatalogGameCardUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        deleteMany: {
+          args: Prisma.CatalogGameCardDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CatalogGameCardUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CatalogGameCardUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>[]
+        }
+        upsert: {
+          args: Prisma.CatalogGameCardUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CatalogGameCardPayload>
+        }
+        aggregate: {
+          args: Prisma.CatalogGameCardAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCatalogGameCard>
+        }
+        groupBy: {
+          args: Prisma.CatalogGameCardGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogGameCardGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CatalogGameCardCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CatalogGameCardCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1407,6 +1557,34 @@ export const CatalogQuestionScalarFieldEnum = {
 } as const
 
 export type CatalogQuestionScalarFieldEnum = (typeof CatalogQuestionScalarFieldEnum)[keyof typeof CatalogQuestionScalarFieldEnum]
+
+
+export const CatalogGameScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  descripcion: 'descripcion',
+  emoji: 'emoji',
+  color: 'color',
+  orden: 'orden',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogGameScalarFieldEnum = (typeof CatalogGameScalarFieldEnum)[keyof typeof CatalogGameScalarFieldEnum]
+
+
+export const CatalogGameCardScalarFieldEnum = {
+  id: 'id',
+  group_id: 'group_id',
+  texto: 'texto',
+  categoria: 'categoria',
+  emoji: 'emoji',
+  color: 'color',
+  activa: 'activa',
+  created_at: 'created_at'
+} as const
+
+export type CatalogGameCardScalarFieldEnum = (typeof CatalogGameCardScalarFieldEnum)[keyof typeof CatalogGameCardScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1607,6 +1785,8 @@ export type GlobalOmitConfig = {
   session?: Prisma.SessionOmit
   swipeChoice?: Prisma.SwipeChoiceOmit
   catalogQuestion?: Prisma.CatalogQuestionOmit
+  catalogGame?: Prisma.CatalogGameOmit
+  catalogGameCard?: Prisma.CatalogGameCardOmit
 }
 
 /* Types for Logging */
