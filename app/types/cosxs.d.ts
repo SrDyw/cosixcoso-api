@@ -121,6 +121,7 @@ export type AccountType = {
     quien: string;
     couple_id: string;
     created_at: Date;
+    visto_en?: Date | null;
 }
 
 // Lo que la API devuelve como `user`

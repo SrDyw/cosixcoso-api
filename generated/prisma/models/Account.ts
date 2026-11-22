@@ -41,6 +41,7 @@ export type AccountMinAggregateOutputType = {
   quien: string | null
   couple_id: string | null
   created_at: Date | null
+  visto_en: Date | null
 }
 
 export type AccountMaxAggregateOutputType = {
@@ -50,6 +51,7 @@ export type AccountMaxAggregateOutputType = {
   quien: string | null
   couple_id: string | null
   created_at: Date | null
+  visto_en: Date | null
 }
 
 export type AccountCountAggregateOutputType = {
@@ -59,6 +61,7 @@ export type AccountCountAggregateOutputType = {
   quien: number
   couple_id: number
   created_at: number
+  visto_en: number
   _all: number
 }
 
@@ -78,6 +81,7 @@ export type AccountMinAggregateInputType = {
   quien?: true
   couple_id?: true
   created_at?: true
+  visto_en?: true
 }
 
 export type AccountMaxAggregateInputType = {
@@ -87,6 +91,7 @@ export type AccountMaxAggregateInputType = {
   quien?: true
   couple_id?: true
   created_at?: true
+  visto_en?: true
 }
 
 export type AccountCountAggregateInputType = {
@@ -96,6 +101,7 @@ export type AccountCountAggregateInputType = {
   quien?: true
   couple_id?: true
   created_at?: true
+  visto_en?: true
   _all?: true
 }
 
@@ -192,6 +198,7 @@ export type AccountGroupByOutputType = {
   quien: string
   couple_id: string
   created_at: Date
+  visto_en: Date | null
   _count: AccountCountAggregateOutputType | null
   _avg: AccountAvgAggregateOutputType | null
   _sum: AccountSumAggregateOutputType | null
@@ -224,6 +231,7 @@ export type AccountWhereInput = {
   quien?: Prisma.StringFilter<"Account"> | string
   couple_id?: Prisma.StringFilter<"Account"> | string
   created_at?: Prisma.DateTimeFilter<"Account"> | Date | string
+  visto_en?: Prisma.DateTimeNullableFilter<"Account"> | Date | string | null
   sessions?: Prisma.SessionListRelationFilter
 }
 
@@ -234,6 +242,7 @@ export type AccountOrderByWithRelationInput = {
   quien?: Prisma.SortOrder
   couple_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  visto_en?: Prisma.SortOrderInput | Prisma.SortOrder
   sessions?: Prisma.SessionOrderByRelationAggregateInput
 }
 
@@ -248,6 +257,7 @@ export type AccountWhereUniqueInput = Prisma.AtLeast<{
   quien?: Prisma.StringFilter<"Account"> | string
   couple_id?: Prisma.StringFilter<"Account"> | string
   created_at?: Prisma.DateTimeFilter<"Account"> | Date | string
+  visto_en?: Prisma.DateTimeNullableFilter<"Account"> | Date | string | null
   sessions?: Prisma.SessionListRelationFilter
 }, "id" | "username" | "couple_id_quien">
 
@@ -258,6 +268,7 @@ export type AccountOrderByWithAggregationInput = {
   quien?: Prisma.SortOrder
   couple_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  visto_en?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.AccountCountOrderByAggregateInput
   _avg?: Prisma.AccountAvgOrderByAggregateInput
   _max?: Prisma.AccountMaxOrderByAggregateInput
@@ -275,6 +286,7 @@ export type AccountScalarWhereWithAggregatesInput = {
   quien?: Prisma.StringWithAggregatesFilter<"Account"> | string
   couple_id?: Prisma.StringWithAggregatesFilter<"Account"> | string
   created_at?: Prisma.DateTimeWithAggregatesFilter<"Account"> | Date | string
+  visto_en?: Prisma.DateTimeNullableWithAggregatesFilter<"Account"> | Date | string | null
 }
 
 export type AccountCreateInput = {
@@ -283,6 +295,7 @@ export type AccountCreateInput = {
   quien: string
   couple_id: string
   created_at?: Date | string
+  visto_en?: Date | string | null
   sessions?: Prisma.SessionCreateNestedManyWithoutAccountInput
 }
 
@@ -293,6 +306,7 @@ export type AccountUncheckedCreateInput = {
   quien: string
   couple_id: string
   created_at?: Date | string
+  visto_en?: Date | string | null
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAccountInput
 }
 
@@ -302,6 +316,7 @@ export type AccountUpdateInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   sessions?: Prisma.SessionUpdateManyWithoutAccountNestedInput
 }
 
@@ -312,6 +327,7 @@ export type AccountUncheckedUpdateInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAccountNestedInput
 }
 
@@ -322,6 +338,7 @@ export type AccountCreateManyInput = {
   quien: string
   couple_id: string
   created_at?: Date | string
+  visto_en?: Date | string | null
 }
 
 export type AccountUpdateManyMutationInput = {
@@ -330,6 +347,7 @@ export type AccountUpdateManyMutationInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AccountUncheckedUpdateManyInput = {
@@ -339,6 +357,7 @@ export type AccountUncheckedUpdateManyInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AccountCouple_idQuienCompoundUniqueInput = {
@@ -353,6 +372,7 @@ export type AccountCountOrderByAggregateInput = {
   quien?: Prisma.SortOrder
   couple_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  visto_en?: Prisma.SortOrder
 }
 
 export type AccountAvgOrderByAggregateInput = {
@@ -366,6 +386,7 @@ export type AccountMaxOrderByAggregateInput = {
   quien?: Prisma.SortOrder
   couple_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  visto_en?: Prisma.SortOrder
 }
 
 export type AccountMinOrderByAggregateInput = {
@@ -375,6 +396,7 @@ export type AccountMinOrderByAggregateInput = {
   quien?: Prisma.SortOrder
   couple_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  visto_en?: Prisma.SortOrder
 }
 
 export type AccountSumOrderByAggregateInput = {
@@ -406,6 +428,7 @@ export type AccountCreateWithoutSessionsInput = {
   quien: string
   couple_id: string
   created_at?: Date | string
+  visto_en?: Date | string | null
 }
 
 export type AccountUncheckedCreateWithoutSessionsInput = {
@@ -415,6 +438,7 @@ export type AccountUncheckedCreateWithoutSessionsInput = {
   quien: string
   couple_id: string
   created_at?: Date | string
+  visto_en?: Date | string | null
 }
 
 export type AccountCreateOrConnectWithoutSessionsInput = {
@@ -439,6 +463,7 @@ export type AccountUpdateWithoutSessionsInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AccountUncheckedUpdateWithoutSessionsInput = {
@@ -448,6 +473,7 @@ export type AccountUncheckedUpdateWithoutSessionsInput = {
   quien?: Prisma.StringFieldUpdateOperationsInput | string
   couple_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  visto_en?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 
@@ -488,6 +514,7 @@ export type AccountSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   quien?: boolean
   couple_id?: boolean
   created_at?: boolean
+  visto_en?: boolean
   sessions?: boolean | Prisma.Account$sessionsArgs<ExtArgs>
   _count?: boolean | Prisma.AccountCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["account"]>
@@ -499,6 +526,7 @@ export type AccountSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   quien?: boolean
   couple_id?: boolean
   created_at?: boolean
+  visto_en?: boolean
 }, ExtArgs["result"]["account"]>
 
 export type AccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -508,6 +536,7 @@ export type AccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   quien?: boolean
   couple_id?: boolean
   created_at?: boolean
+  visto_en?: boolean
 }, ExtArgs["result"]["account"]>
 
 export type AccountSelectScalar = {
@@ -517,9 +546,10 @@ export type AccountSelectScalar = {
   quien?: boolean
   couple_id?: boolean
   created_at?: boolean
+  visto_en?: boolean
 }
 
-export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "username" | "password_hash" | "quien" | "couple_id" | "created_at", ExtArgs["result"]["account"]>
+export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "username" | "password_hash" | "quien" | "couple_id" | "created_at" | "visto_en", ExtArgs["result"]["account"]>
 export type AccountInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | Prisma.Account$sessionsArgs<ExtArgs>
   _count?: boolean | Prisma.AccountCountOutputTypeDefaultArgs<ExtArgs>
@@ -539,6 +569,7 @@ export type $AccountPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     quien: string
     couple_id: string
     created_at: Date
+    visto_en: Date | null
   }, ExtArgs["result"]["account"]>
   composites: {}
 }
@@ -969,6 +1000,7 @@ export interface AccountFieldRefs {
   readonly quien: Prisma.FieldRef<"Account", 'String'>
   readonly couple_id: Prisma.FieldRef<"Account", 'String'>
   readonly created_at: Prisma.FieldRef<"Account", 'DateTime'>
+  readonly visto_en: Prisma.FieldRef<"Account", 'DateTime'>
 }
     
 

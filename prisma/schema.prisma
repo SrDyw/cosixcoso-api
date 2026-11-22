@@ -106,6 +106,8 @@ model Account {
   quien         String    @db.VarChar(4) // "cosi" | "coso"
   couple_id     String    @db.VarChar(200)
   created_at    DateTime  @default(now())
+  // Último latido de la app abierta (presencia); null si se despidió.
+  visto_en      DateTime?
   sessions      Session[]
 
   @@unique([couple_id, quien])

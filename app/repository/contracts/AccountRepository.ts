@@ -61,6 +61,11 @@ export default class AccountRepository {
       throw ex;
     }
   }
+
+  // Presencia: guarda el último latido de la cuenta (o lo borra al despedirse).
+  async marcarVisto(id: number, visto: Date | null): Promise<void> {
+    await prisma.account.update({ where: { id }, data: { visto_en: visto } });
+  }
 }
 
 export class SessionRepository {

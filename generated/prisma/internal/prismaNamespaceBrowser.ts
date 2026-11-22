@@ -178,7 +178,8 @@ export const AccountScalarFieldEnum = {
   password_hash: 'password_hash',
   quien: 'quien',
   couple_id: 'couple_id',
-  created_at: 'created_at'
+  created_at: 'created_at',
+  visto_en: 'visto_en'
 } as const
 
 export type AccountScalarFieldEnum = (typeof AccountScalarFieldEnum)[keyof typeof AccountScalarFieldEnum]

@@ -145,8 +145,10 @@ export async function POST(req: NextRequest) {
     }
     return NextResponse.json(databaseAddResponse);
   } catch (error) {
+    // Un Error se serializa como {}: se manda su mensaje para poder ver la causa.
+    console.error(error);
     return NextResponse.json({
-      msg: error,
+      msg: error instanceof Error ? error.message : error,
       statusCode: 500,
     });
   }

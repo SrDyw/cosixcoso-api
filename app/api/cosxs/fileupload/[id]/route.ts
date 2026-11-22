@@ -220,7 +220,7 @@ export const POST = async (
       return NextResponse.json(
         {
           error: "Error with image upload service",
-          message: error,
+          message: error instanceof Error ? error.message : error,
         },
         { status: 500 }
       );
