@@ -59,7 +59,8 @@ export const ModelName = {
   QuestionAnswer: 'QuestionAnswer',
   Media: 'Media',
   Account: 'Account',
-  Session: 'Session'
+  Session: 'Session',
+  SwipeChoice: 'SwipeChoice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -194,6 +195,19 @@ export const SessionScalarFieldEnum = {
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+
+
+export const SwipeChoiceScalarFieldEnum = {
+  id: 'id',
+  card_id: 'card_id',
+  user_id: 'user_id',
+  couple_id: 'couple_id',
+  choice: 'choice',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type SwipeChoiceScalarFieldEnum = (typeof SwipeChoiceScalarFieldEnum)[keyof typeof SwipeChoiceScalarFieldEnum]
 
 
 export const SortOrder = {

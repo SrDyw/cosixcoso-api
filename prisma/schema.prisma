@@ -125,3 +125,17 @@ model Session {
   @@index([account_id])
   @@map("cosxs_sessions")
 }
+
+model SwipeChoice {
+  id         Int      @id @default(autoincrement())
+  card_id    Int
+  user_id    String   @db.VarChar(200)
+  couple_id  String   @db.VarChar(200)
+  choice     String   @db.VarChar(10) // "si" | "no" | "igual"
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  @@unique([couple_id, card_id, user_id])
+  @@index([couple_id])
+  @@map("cosxs_swipes")
+}

@@ -392,7 +392,8 @@ export const ModelName = {
   QuestionAnswer: 'QuestionAnswer',
   Media: 'Media',
   Account: 'Account',
-  Session: 'Session'
+  Session: 'Session',
+  SwipeChoice: 'SwipeChoice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -408,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session"
+    modelProps: "journal" | "cosxEvent" | "cosxMessage" | "character" | "todoList" | "questionAnswer" | "media" | "account" | "session" | "swipeChoice"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1078,6 +1079,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SwipeChoice: {
+      payload: Prisma.$SwipeChoicePayload<ExtArgs>
+      fields: Prisma.SwipeChoiceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SwipeChoiceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SwipeChoiceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        findFirst: {
+          args: Prisma.SwipeChoiceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SwipeChoiceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        findMany: {
+          args: Prisma.SwipeChoiceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>[]
+        }
+        create: {
+          args: Prisma.SwipeChoiceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        createMany: {
+          args: Prisma.SwipeChoiceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SwipeChoiceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>[]
+        }
+        delete: {
+          args: Prisma.SwipeChoiceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        update: {
+          args: Prisma.SwipeChoiceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        deleteMany: {
+          args: Prisma.SwipeChoiceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SwipeChoiceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SwipeChoiceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>[]
+        }
+        upsert: {
+          args: Prisma.SwipeChoiceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SwipeChoicePayload>
+        }
+        aggregate: {
+          args: Prisma.SwipeChoiceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSwipeChoice>
+        }
+        groupBy: {
+          args: Prisma.SwipeChoiceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SwipeChoiceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SwipeChoiceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SwipeChoiceCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1233,6 +1308,19 @@ export const SessionScalarFieldEnum = {
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+
+
+export const SwipeChoiceScalarFieldEnum = {
+  id: 'id',
+  card_id: 'card_id',
+  user_id: 'user_id',
+  couple_id: 'couple_id',
+  choice: 'choice',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type SwipeChoiceScalarFieldEnum = (typeof SwipeChoiceScalarFieldEnum)[keyof typeof SwipeChoiceScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1431,6 +1519,7 @@ export type GlobalOmitConfig = {
   media?: Prisma.MediaOmit
   account?: Prisma.AccountOmit
   session?: Prisma.SessionOmit
+  swipeChoice?: Prisma.SwipeChoiceOmit
 }
 
 /* Types for Logging */
